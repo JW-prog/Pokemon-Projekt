@@ -1,0 +1,33 @@
+@media (max-width: 100px) {
+  .pokemon-card,
+  .overlay {
+    font-size: 8px;
+    padding: 2px;
+    width: 98vw;
+    min-width: 0;
+  }
+  .overlay {
+    left: 1vw;
+    right: 1vw;
+    top: 5vh;
+  }
+  .pokemon-image {
+    width: 60px;
+    height: auto;
+  }
+}
+
+@media (max-width: 450px) {
+  .nav-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 250px){
+  .search-input {
+    width: 90vw;
+    max-width: 100px;
+  }
+}
