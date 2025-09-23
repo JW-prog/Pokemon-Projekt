@@ -4,33 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokemon-Projekt</title>
-    <link rel="stylesheet" href="pkm.css" />
-    <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="media.css" />
+    <link
+      rel="shortcut icon"
+      href="imgs/pokemon-1536849_640.png"
+      type="image/x-icon"
+    />
     <script src="script.js"></script>
-    <link rel="shortcut icon" href="imgs/pokemon-1536849_640.png" type="image/x-icon">
+    <script src="template.js"></script>
   </head>
   <body onload="init()">
     <div class="container">
       <header class="header">
-        <nav class="nav-flex" style="display: flex; justify-content: center; align-items: center; width: 100%;">
-          <div class="search-container" style="display: flex; align-items: center; gap: 8px;"></div>
+       <div class="Pokemon_logo"><a href="#" onclick="reloadPage(); return false;">
+          <img class="logo_img"
+            src="imgs/pokemon-1530315_640.png"
+            alt="Pokemon Logo"/> 
+        </a><h1>Pokemon</h1></div>
+        <nav class="nav-flex">
+          <div class="search-container">
             <input
               class="search-input"
               id="search-input"
               type="text"
               placeholder="Pokemon suchen..."
-              style="padding: 8px 14px; border: 2px solid #ffcb05; border-radius: 25px; outline: none; font-size: 1rem; transition: border-color 0.2s;"
               onfocus="this.style.borderColor='#3b4cca';"
               onblur="this.style.borderColor='#ffcb05';"
             />
             <button
               class="search-button"
               onclick="findPokemon()"
-              style="padding: 8px 18px; background: linear-gradient(90deg, #ffcb05 60%, #3b4cca 100%); border: none; border-radius: 25px; color: #fff; font-weight: bold; font-size: 1rem; cursor: pointer; box-shadow: 0 2px 8px rgba(59,76,202,0.08); transition: background 0.2s;"
               onmouseover="this.style.background='linear-gradient(90deg, #3b4cca 60%, #ffcb05 100%)';"
               onmouseout="this.style.background='linear-gradient(90deg, #ffcb05 60%, #3b4cca 100%)';"
             >
-              <img src="./imgs/pokemon-1536849_640.png" alt="" style="height: 18px; vertical-align: middle; margin-right: 6px;">
+              <img
+                src="./imgs/pokemon-1536849_640.png"
+                alt=""
+                style="height: 18px; vertical-align: middle; margin-right: 6px"
+              />
               Finden
             </button>
           </div>
@@ -38,32 +50,39 @@
       </header>
       <br />
       <div id="content"></div>
-      <div class="load-more-container" style="display: flex; justify-content: center; margin: 32px 0;">
-        <button class="load-more-btn"
-            onclick="loadingMorePokemon()"
-            style="display: flex; align-items: center; gap: 8px; background: linear-gradient(90deg, #ffcb05 60%, #3b4cca 100%); border: none; border-radius: 20px; padding: 8px 18px; box-shadow: 0 2px 8px rgba(59,76,202,0.10); cursor: pointer; transition: background 0.2s, transform 0.1s; color: #fff; font-weight: bold; font-size: 1rem;">
-          <img src="./imgs/pokemon-1536849_640.png"
-           alt="Lade mehr Pokemon"
-           class="ball"
-           style="height: 20px; width: 20px; margin-right: 6px;"/>
+      <div id="loading-spinner" style="display: none" class="spinner">
+        <div class="loader"></div>
+      </div>
+      <div class="load-more-container">
+        <button class="load-more-btn" onclick="loadingMorePokemon()">
+          <img
+            src="./imgs/pokemon-1536849_640.png"
+            alt="Lade mehr Pokemon"
+            class="ball"
+          />
           <span>Lade mehr Pokémon</span>
         </button>
       </div>
-        <div id="overlay" style="display: none" class="overlay">
-          <div id="overlay-content" class="overlay-content">
-            <!-- Dynamischer Inhalt wird hier eingefügt -->
-            <button onclick="closeOverlay()">Schließen</button>
-            <div id="overlayBody">
-              <!-- Weitere Inhalte werden hier durch JavaScript hinzugefügt -->
-            </div>
+      <div id="overlay" style="display: none" class="overlay">
+        <div id="overlay-content" class="overlay-content">
+          <!-- Dynamischer Inhalt wird hier eingefügt -->
+          <div onclick="closeOverlay()" id="overlayBody">
+            <!-- Weitere Inhalte werden hier durch JavaScript hinzugefügt -->
           </div>
         </div>
       </div>
       <footer class="footer">
-        <img src="" alt="" />
+        <div class="footer-links">
+          <a class="link" href="#">Datenschutzerklärung</a>
+          <a class="link" href="#">Impressum</a>
+          <a class="link" href="#">Kontakt</a>
+        </div>
+        <div><img
+          src="imgs/pokemon-1536849_640.png"
+          alt="Pokemon Logo"
+          style="height: 80px"
+        /></div>
       </footer>
     </div>
-
-   
   </body>
 </html>
