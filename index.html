@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokemon-Projekt</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="media.css" />
     <link
       rel="shortcut icon"
       href="imgs/pokemon-1536849_640.png"
@@ -15,74 +14,78 @@
     <script src="template.js"></script>
   </head>
   <body onload="init()">
-    <div class="container">
-      <header class="header">
-       <div class="Pokemon_logo"><a href="#" onclick="reloadPage(); return false;">
-          <img class="logo_img"
+    <header class="header">
+      <div class="Pokemon_logo">
+        <a href="#" onclick="reloadPage(); return false;">
+          <img
+            class="logo_img"
             src="imgs/pokemon-1530315_640.png"
-            alt="Pokemon Logo"/> 
-        </a><h1>Pokemon</h1></div>
-        <nav class="nav-flex">
-          <div class="search-container">
-            <input
-              class="search-input"
-              id="search-input"
-              type="text"
-              placeholder="Pokemon suchen..."
-              onfocus="this.style.borderColor='#3b4cca';"
-              onblur="this.style.borderColor='#ffcb05';"
+            alt="Pokemon Logo"
+          />
+        </a>
+        <h1>Pokemon</h1>
+      </div>
+      <nav class="nav-flex">
+        <div class="search-container">
+          <input
+            class="search-input"
+            id="search-input"
+            type="text"
+            placeholder="Pokemon suchen..."
+            onfocus="this.style.borderColor='#3b4cca';"
+            onblur="this.style.borderColor='#ffcb05';"
+          />
+          <button
+            class="search-button"
+            onclick="findPokemon()"
+            onmouseover="this.style.background='linear-gradient(90deg, #3b4cca 60%, #ffcb05 100%)';"
+            onmouseout="this.style.background='linear-gradient(90deg, #ffcb05 60%, #3b4cca 100%)';"
+          >
+            <img
+              src="./imgs/pokemon-1536849_640.png"
+              alt=""
+              style="height: 18px; vertical-align: middle; margin-right: 6px"
             />
-            <button
-              class="search-button"
-              onclick="findPokemon()"
-              onmouseover="this.style.background='linear-gradient(90deg, #3b4cca 60%, #ffcb05 100%)';"
-              onmouseout="this.style.background='linear-gradient(90deg, #ffcb05 60%, #3b4cca 100%)';"
-            >
-              <img
-                src="./imgs/pokemon-1536849_640.png"
-                alt=""
-                style="height: 18px; vertical-align: middle; margin-right: 6px"
-              />
-              Finden
-            </button>
-          </div>
-        </nav>
-      </header>
-      <br />
+            Finden
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
       <div id="content"></div>
-      <div id="loading-spinner" style="display: none" class="spinner">
+      <div id="loading-spinner" style="display: block" class="spinner">
         <div class="loader"></div>
       </div>
       <div class="load-more-container">
-        <button class="load-more-btn" onclick="loadingMorePokemon()">
-          <img
-            src="./imgs/pokemon-1536849_640.png"
-            alt="Lade mehr Pokemon"
-            class="ball"
-          />
+        <button
+          class="load-more-btn"
+          id="load-more-btn"
+          onclick="loadingMorePokemon(this)"
+        >
           <span>Lade mehr Pokémon</span>
         </button>
       </div>
       <div id="overlay" style="display: none" class="overlay">
         <div id="overlay-content" class="overlay-content">
-          <!-- Dynamischer Inhalt wird hier eingefügt -->
           <div onclick="closeOverlay()" id="overlayBody">
-            <!-- Weitere Inhalte werden hier durch JavaScript hinzugefügt -->
           </div>
         </div>
       </div>
-      <footer class="footer">
-        <div class="footer-links">
-          <a class="link" href="#">Datenschutzerklärung</a>
-          <a class="link" href="#">Impressum</a>
-          <a class="link" href="#">Kontakt</a>
-        </div>
-        <div><img
+    </div>
+    <footer class="footer">
+      <div class="footer-links">
+        <a class="link" href="#">Datenschutzerklärung</a>
+        <a class="link" href="#">Impressum</a>
+        <a class="link" href="#">Kontakt</a>
+      </div>
+      <div>
+        <img
           src="imgs/pokemon-1536849_640.png"
           alt="Pokemon Logo"
-          style="height: 80px"
-        /></div>
-      </footer>
-    </div>
+          style="height: 70px"
+        />
+      </div>
+    </footer>
   </body>
 </html>

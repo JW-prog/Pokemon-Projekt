@@ -1,22 +1,24 @@
+html,
 body {
-  background-color: #838a92b5;
-  padding: 20px;
-  font-family: "Segoe UI", Arial, sans-serif;
+  height: 100%; 
   margin: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
-
-.container {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: column; 
+  background-color: #f7f7f7;
+  margin: 0;
+  overflow: auto;
+}
+.container {
+  flex: 1; 
+  display: flex;
+  flex-direction: column; 
+  padding: 20px;
 }
 
 nav {
   display: flex;
-  justify-content: space-between;
-  margin: 40px 0;
+  justify-content: center; 
+  margin-top: 10px; 
 }
 
 .nav-flex {
@@ -29,17 +31,17 @@ nav {
 
 header {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 40px;
-  background: #f7f7f7;
-  border: 2px solid #ffcb05;
+  justify-content: space-around; 
+  align-items: center; 
+  width: 100%; 
+  height: 200px; 
+  background: #f7f7f7; 
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
-  max-width: 1920px; 
-  height: 100px;
-  margin: 10px; 
-  border-radius: 20px;
-  
+  margin: 0; 
+  flex-direction: row; 
+  border-radius: 0; 
+  background-color: #3b4cca;
+  color: #ffcb05;
 }
 
 .logo {
@@ -97,6 +99,7 @@ h1 {
   background-color: #f7f6fb;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
 }
 
 .pokemon-card:hover {
@@ -169,6 +172,7 @@ h1 {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin: 25px;
 }
 
 .search-input {
@@ -263,7 +267,7 @@ h1 {
 }
 
 p {
-  font-size: 25px;
+  font-size: 65px;
   color: #222;
   margin: 5px 0;
   text-align: center;
@@ -299,7 +303,6 @@ p {
   color: green;
 }
 
-/* Typenfarben */
 .green-background {
   background-color: #015f01;
   color: #fff;
@@ -321,7 +324,7 @@ p {
   color: #fff;
 }
 .pink-background {
-  background-color: #e75480;
+  background-color: #14cf43;
   color: #fff;
 }
 .gray-background {
@@ -358,26 +361,52 @@ p {
 }
 .footer {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 40px;
+  justify-content: space-around; 
+  align-items: center; 
+  width: 100%;
+  height: 200px;
   background: #f7f7f7;
-  border: 2px solid #ffcb05;
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
-  max-width: 1920px; 
-  height: 100px;
-  margin: 10px; 
-  border-radius: 20px;
+  margin: 0;
+  flex-direction: row;
+  border-radius: 0;
+  padding-top: 15px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  background-color: #3b4cca;
+  color: #ffcb05;
+}
+
+.footer-links {
+  display: flex;
+  gap: 70px;
+  color: #ffcb05; /* Sichtbare gelbe Schrift */
+}
+
+.footer-links a {
+  color: #ffcb05;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: default;
+}
+
+.link {
+  color: #ffcb05; 
+  text-decoration: underline; 
+  font-weight: 500;
+  cursor: pointer;
 }
 .footer-links {
   display: flex;
-  gap: 15px;
-  font-size: 20px;
+  gap: 70px;
+  color: yellow;
+  
 }
 .link {
   color: #3b4cca;
   text-decoration: none;
   font-weight: 500;
+  cursor: default; 
 }
 .bar-font {
   display: inline-block;
@@ -387,6 +416,9 @@ p {
 .figure {
   width: 180px;
   height: 180px;
+  background-color: whitesmoke ;
+  border-radius: 50px;
+  border: 2px solid #ffcb05;
 }
 span {
   margin-left: 6px;
@@ -414,34 +446,46 @@ span {
   background: #4caf50;
   float: left;
 }
-.spinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20px;
-}
 
-.loader {
-  border-radius: 50%;
-  width: 250px;
-  height: 250px;
-  animation: spin 5s linear infinite;
-  background-color: #cc1919;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 .Pokemon_logo {
   display: flex;
   align-items: center;
   gap: 12px;
+
 }
 .logo_img {
   height: 100px;
+}
+
+.stat-bar-row {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 10px; 
+    font-family: "Segoe UI", Arial, sans-serif; 
+}
+
+.stat-label {
+    width: 80px; 
+    font-weight: bold;
+}
+
+.stat-bar-bg {
+    background-color: #eee;
+    border: 2px solid #ffcb05; 
+    border-radius: 4px;
+    width: 100px; 
+    margin: 5px 10px; 
+    height: 20px; 
+    position: relative; 
+}
+
+.stat-bar-fill {
+    height: 100%; 
+    transition: width 0.4s ease; 
+}
+
+.stat-value {
+    margin-left: 10px; 
+    font-weight: bold;
+    color: #333; 
 }
