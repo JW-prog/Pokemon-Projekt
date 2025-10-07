@@ -26,10 +26,12 @@ async function fetchPokemonDetails(url) {
 }
 
 async function loadingMorePokemon(button) {
-    if (button) button.disabled = true; 
+    if (button) button.disabled = true;
     document.getElementById("loading-spinner").style.display = "flex";
     let params = new URLSearchParams(BASE_URL.split('?')[1]);
-    params.set('offset', (parseInt(params.get('offset')) || 0) + 6);
+    let currentOffset = parseInt(params.get('offset')) || 0;
+    currentOffset += 20;
+    params.set('offset', currentOffset);
     BASE_URL = `https://pokeapi.co/api/v2/pokemon?${params.toString()}`;
     const response = await fetch(BASE_URL);
     const data = await response.json();
@@ -37,11 +39,10 @@ async function loadingMorePokemon(button) {
     pokemonList.push(...newPokemons);
     const contentRef = document.getElementById("content");
     newPokemons.forEach((pokemon, index) => {
-        setTimeout(() => contentRef.innerHTML += getPokemonHTML(pokemon), index * 200);
+    setTimeout(() => contentRef.innerHTML += getPokemonHTML(pokemon), index * 200);
     });
-
     document.getElementById("loading-spinner").style.display = "none";
-    if (button) button.disabled = false; 
+    if (button) button.disabled = false;
 }
 
 function showOverlayDetails(pokemon) {
@@ -79,7 +80,7 @@ function findPokemon() {
         filtered.map(pokemon => getPokemonHTML(pokemon)).join('') : 
         "<p>Leider kein Pokémon gefunden. Bitte versuchen Sie es mit einem anderen Namen.</p>";
     const loadMoreBtn = document.getElementById("load-more-btn");
-    loadMoreBtn.style.display = filtered.length === 0 ? "none" : ""; 
+    loadMoreBtn.style.display = "none";
     currentPokemonIndex = filtered.length > 0 ? pokemonList.findIndex(p => p.name.toLowerCase() === filtered[0].name.toLowerCase()) : 0;
 }
 

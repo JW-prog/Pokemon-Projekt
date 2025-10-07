@@ -1,24 +1,24 @@
 html,
 body {
-  height: 100%; 
+  height: 100%;
   margin: 0;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   background-color: #f7f7f7;
   margin: 0;
   overflow: auto;
 }
 .container {
-  flex: 1; 
+  flex: 1;
   display: flex;
-  flex-direction: column; 
-  padding: 20px;
+  flex-direction: column;
+  
 }
 
 nav {
   display: flex;
-  justify-content: center; 
-  margin-top: 10px; 
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .nav-flex {
@@ -27,21 +27,26 @@ nav {
   align-items: center;
   width: 100%;
   gap: 10px;
+  margin: 50px;
 }
 
 header {
   display: flex;
-  justify-content: space-around; 
-  align-items: center; 
-  width: 100%; 
-  height: 200px; 
-  background: #f7f7f7; 
-  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
-  margin: 0; 
-  flex-direction: row; 
-  border-radius: 0; 
-  background-color: #3b4cca;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  min-height: 200px;
+  background: #aca9ae;
   color: #ffcb05;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  flex-direction: row;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  gap: 50px;
+  margin-bottom: 40px;
 }
 
 .logo {
@@ -238,6 +243,7 @@ h1 {
   background-color: rgba(73, 72, 77, 0.7);
   display: none;
   z-index: 1000;
+  text-align: center;
 }
 
 .overlay-content {
@@ -263,7 +269,8 @@ h1 {
   gap: 60px;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 20px;
+  background-color: #aca9ae;
+
 }
 
 p {
@@ -361,38 +368,39 @@ p {
 }
 .footer {
   display: flex;
-  justify-content: space-around; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 200px;
-  background: #f7f7f7;
-  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
-  margin: 0;
-  flex-direction: row;
-  border-radius: 0;
-  padding-top: 15px;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 20px;
-  background-color: #3b4cca;
+  max-width: 1920px;
+  margin: 0 auto;
+  min-height: 200px;
+  background: #aca9ae;
   color: #ffcb05;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  flex-direction: row;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  gap: 50px;
+  
 }
 
 .footer-links {
   display: flex;
   gap: 70px;
-  color: #ffcb05; /* Sichtbare gelbe Schrift */
+  color: #070706; 
 }
 
 .footer-links a {
-  color: #ffcb05;
+  color: #050504;
   text-decoration: none;
   font-weight: 500;
   cursor: default;
 }
 
 .link {
-  color: #ffcb05; 
-  text-decoration: underline; 
+  color: #ffcb05;
+  text-decoration: underline;
   font-weight: 500;
   cursor: pointer;
 }
@@ -400,13 +408,12 @@ p {
   display: flex;
   gap: 70px;
   color: yellow;
-  
 }
 .link {
   color: #3b4cca;
   text-decoration: none;
   font-weight: 500;
-  cursor: default; 
+  cursor: default;
 }
 .bar-font {
   display: inline-block;
@@ -416,9 +423,10 @@ p {
 .figure {
   width: 180px;
   height: 180px;
-  background-color: whitesmoke ;
+  background-color: whitesmoke;
   border-radius: 50px;
   border: 2px solid #ffcb05;
+  margin-bottom: 20px;
 }
 span {
   margin-left: 6px;
@@ -451,41 +459,83 @@ span {
   display: flex;
   align-items: center;
   gap: 12px;
-
 }
 .logo_img {
   height: 100px;
 }
 
 .stat-bar-row {
-    display: flex;
-    align-items: center; 
-    margin-bottom: 10px; 
-    font-family: "Segoe UI", Arial, sans-serif; 
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin-top: 10px;
 }
 
 .stat-label {
-    width: 80px; 
-    font-weight: bold;
+  width: 80px;
+  font-weight: bold;
 }
 
 .stat-bar-bg {
-    background-color: #eee;
-    border: 2px solid #ffcb05; 
-    border-radius: 4px;
-    width: 100px; 
-    margin: 5px 10px; 
-    height: 20px; 
-    position: relative; 
+  background-color: #eee;
+  border: 2px solid #ffcb05;
+  border-radius: 4px;
+  width: 100px;
+  margin: 5px 10px;
+  height: 20px;
+  position: relative;
 }
 
 .stat-bar-fill {
-    height: 100%; 
-    transition: width 0.4s ease; 
+  height: 100%;
+  transition: width 0.4s ease;
 }
 
 .stat-value {
-    margin-left: 10px; 
-    font-weight: bold;
-    color: #333; 
+  margin-left: 10px;
+  font-weight: bold;
+  color: #000000;
+  font-size: 14px;
+}
+
+@media (max-width: 800px) {
+  .search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 25px;
+    flex-direction: column;
+  }
+}
+@media (max-width: 600px) {
+  h1 {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media (max-width: 450px) {
+  .footer-links {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  .Pokemon_logo {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  .search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 53px;
+    flex-direction: column;
+  }
 }
