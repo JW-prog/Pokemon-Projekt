@@ -71,17 +71,39 @@ function Rückwärts() {
 }
 
 function findPokemon() {
-    const searchInput = document.getElementById("search-input").value.trim().toLowerCase();
-    const filtered = pokemonList.filter(p => 
-        p.name.toLowerCase().includes(searchInput) || String(p.id).includes(searchInput)
-    );
+    const input = document.getElementById("search-input").value.trim().toLowerCase();
     const content = document.getElementById("content");
-    content.innerHTML = filtered.length ? 
-        filtered.map(pokemon => getPokemonHTML(pokemon)).join('') : 
-        "<p>Leider kein Pokémon gefunden. Bitte versuchen Sie es mit einem anderen Namen.</p>";
     const loadMoreBtn = document.getElementById("load-more-btn");
+    document.getElementById("back-to-home-btn")?.remove();
+    if (!input) {
+        content.innerHTML = pokemonList.map(getPokemonHTML).join('');
+        loadMoreBtn.style.display = "block";
+        currentPokemonIndex = 0;
+        return;
+    }
+    const filtered = pokemonList.filter(p =>
+        p.name.toLowerCase().includes(input) || String(p.id).includes(input)
+    );
+    content.innerHTML = filtered.length ?
+        filtered.map(getPokemonHTML).join('') :
+        "<p>Leider kein Pokémon gefunden. Bitte versuchen Sie es mit einem anderen Namen.</p>";
     loadMoreBtn.style.display = "none";
-    currentPokemonIndex = filtered.length > 0 ? pokemonList.findIndex(p => p.name.toLowerCase() === filtered[0].name.toLowerCase()) : 0;
+    currentPokemonIndex = filtered.length ? pokemonList.findIndex(p => p.name.toLowerCase() === filtered[0].name.toLowerCase()) : 0;
+    if (input) {
+        const backBtn = Object.assign(document.createElement("button"), {
+            id: "back-to-home-btn",
+            className: "btn",
+            innerText: "Zurück zur Startseite",
+            onclick: () => {
+                document.getElementById("search-input").value = "";
+                content.innerHTML = pokemonList.slice(0, 20).map(getPokemonHTML).join('');
+                loadMoreBtn.style.display = "block";
+                backBtn.remove();
+                currentPokemonIndex = 0;
+            }
+        });
+        loadMoreBtn.after(backBtn);
+    }
 }
 
 function reloadPage() {
